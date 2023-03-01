@@ -94,7 +94,7 @@ task run_statistical_analysis {
         cpu = ~{cpu}
 
         run_command = ['cellphonedb', 'method', 'statistical_analysis', annotations_file, anndata_file, 
-                        '--outputs-path', 'outputs', 
+                        '--output-path', 'outputs', 
                         '--counts-data', counts_data, 
                         '--pvalue', str(pvalue),
                         '--threshold', str(threshold),
