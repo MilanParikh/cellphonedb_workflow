@@ -101,16 +101,15 @@ task run_statistical_analysis {
                         '--iterations', str(n_iter),
                         '--threads', str(cpu)]
 
-        if(subsampling) {
+        if(subsampling):
             run_command.append('--subsampling')
             run_command.append('--subsampling-log')
             run_combine.append(subsampling_log)
             run_command.append('--subsampling-num-pc')
             run_combine.append(subsampling_num_pc)
-            if(subsampling_num_cells > 0):
+            if(subsampling_num_cells > 0) :
                 run_command.append('--subsampling-num-cells')
                 run_combine.append(str(subsampling_num_cells))
-        }
 
         print(' '.join(run_command), flush=True)
         check_call(run_command)
